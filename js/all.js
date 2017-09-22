@@ -29,37 +29,6 @@ $('.success-pagination a').click(function () {
     $('.success .su-items').removeClass('show');
     $('.success .su-items').eq(curs).addClass('show');
 });
-/*var auto=0;
-$(".he-left").click(function(){
-    auto++;
-    var len=$(".partner ul li").length;
-    if(auto+6>len){
-        $(".partner-cont ul").stop().append($(".partner-cont ul").html());
-    }
-    $(".partner-cont ul").stop().animate({left:-auto*188},1000);
-});
-$(".he-right").click(function(){
-    if(auto==0){
-        $(".partner-cont ul").prepend($(".partner-cont ul").html());
-        $(".partner-cont ul").css("left","-1380px");
-        auto=6
-    }
-    auto--;
-    $(".partner-cont ul").stop().animate({left:-auto*188},1000);
-});
-$(".partner-cont").hover(function() {
-    clearInterval(picTimer);
-},function() {
-    picTimer = setInterval(function() {
-        var len=$(".partner ul li").length;
-        auto++;
-        if(auto+6>len){
-            $(".partner-cont ul").stop().append($(".partner-cont ul").html());
-        }
-        $(".partner-cont ul").stop().animate({left:-auto*188},1000);
-        if(auto == len) {index = auto;}
-    },4000);
-}).trigger("mouseleave");*/
 //合作伙伴
 $('.swf p a:first').css({'background' : '#3d96ef'});
 function next(cl,mo){
