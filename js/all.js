@@ -30,7 +30,7 @@ $('.success-pagination a').click(function () {
     $('.success .su-items').eq(curs).addClass('show');
 });
 //合作伙伴
-$('.swf p a:first').css({'background' : '#3d96ef'});
+/*$('.swf p a:first').css({'background' : '#3d96ef'});*/
 function next(cl,mo){
     var a;
     var b;
@@ -48,6 +48,48 @@ function prev(cl,mo){
     $('.' + cl + ' ul').css({'margin-left' : mo});
     $('.' + cl + ' ul').stop().animate({'margin-left' : '0'})
 }
+var i = 0,
+    a = 1,
+    all_li = $(".wrapx li").length - 1,
+    circleLi=$(".circle li"),
+    key=0;
+circleLi.on("click",function(){
+    i=key=$(this).index();
+    banner_change();
+    circles();
+});
+
+function banner_change() {
+    a = 0;
+    $(".wrapx li").eq(i).animate({
+        opacity: "1"
+    }).siblings().animate({
+        opacity: "0"
+    }, function() {
+        a = 1;
+    });
+    $(".circle li").eq(i).css("background", "#3d96ef").siblings().css("background", "#23344b");
+}
+banner_change();
+/*添加小圆点函数*/
+function circles(){
+    circleLi.eq(i).addClass('current').siblings().removeClass('current');
+}
+function banner_change_self() {
+    i++;
+    if (i > all_li) {
+        i = 0;
+    }
+    banner_change();
+}
+var banner_timer= setInterval(banner_change_self, 2000);
+$(".banner").on("mouseover", function() { //鼠标进入轮播区域时，自动切换暂停
+    clearInterval(banner_timer);
+})
+$(".banner").on("mouseout", function() { //鼠标离开轮播区域时，自动切换继续
+    banner_timer = setInterval(banner_change_self, 2000);
+})
+/*
 var swf = setInterval(function(){
     next('swf','-100%');
 },3000);
@@ -73,7 +115,7 @@ $('.swf p a').click(function(e){
     $(this).css({'background' : '#3d96ef'});
     $('.swf ul').stop().animate({'margin-left' : -100*b + '%'},function(){
     });
-});
+});*/
 function prev(cl,mo){
     $('.' + cl + ' ul li:last').prependTo('.' + cl + ' ul');
     $('.' + cl + ' ul').css({'margin-left' : mo});

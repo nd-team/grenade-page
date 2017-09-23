@@ -64,7 +64,7 @@
     width: 2000%;
     overflow: hidden;
     li{
-      float: left;
+      position: absolute;
       a{
         img{
           width: 100%;
@@ -89,7 +89,7 @@
     bottom: 2.1875rem;
     margin-left:-3.5rem;
     z-index: 60;
-    a{
+    li{
       width: 0.625rem;
       height: 0.625rem;
       background-color: #23344b;
