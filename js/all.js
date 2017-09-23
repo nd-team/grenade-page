@@ -70,12 +70,9 @@ $('.swf p a').click(function(e){
     a = $(this).attr('class');
     b = $('.swf ul li.' + a).index();
     $('.swf p a').css({'background' : '#23344b'});
-    $(this).css({'background' : '#060'});
+    $(this).css({'background' : '#3d96ef'});
     $('.swf ul').stop().animate({'margin-left' : -100*b + '%'},function(){
     });
-
-
-
 });
 function prev(cl,mo){
     $('.' + cl + ' ul li:last').prependTo('.' + cl + ' ul');
@@ -88,7 +85,6 @@ $('.he-left').click(function(){
 $('.he-right').click(function(){
     prev('flish','-176px')
 });
-
 $('.inactive').click(function(){
     if($(this).siblings('ul').css('display')=='none'){
         $(this).siblings('ul').slideDown(100).children('li');
