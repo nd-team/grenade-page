@@ -41,7 +41,7 @@
       }
       a{
         width: 60px;
-        line-height: 5rem;
+        line-height: 90px;
         display: inline-block;
         text-align: center;
         color: #666;
@@ -454,12 +454,16 @@
           margin-left: 5%;
         }
         .team-pic{
-          min-width: 628px;
-          min-height: 273px;
           flex: 0.75;
+          img{
+            display: inline-block;
+            min-width: 656px;
+            min-height: 410px;
+          }
         }
       }
     }
+
   }
   .partner{
     position:relative;
